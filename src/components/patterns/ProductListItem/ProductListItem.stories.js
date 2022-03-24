@@ -6,22 +6,29 @@ export default {
   title: 'ProductListItem',
   decorators: [withKnobs],
 };
+const standartData = {
+  name: text("Name", "Standard Coffee"),
+  price: text("price", "2.50"),
+  onAddToCart: action("Add to cart clicked"),
+  imageUrl: text("imageUrl", "https://source.unsplash.com/tNALoIZhqVM/200x100/"),
+  isOnSale: true,
+}
+const soldOutData = {
+  name: text("Name", "Standard Coffee"),
+  price: text("price", "2.50"),
+  onAddToCart: action("Add to cart clicked"),
+  imageUrl: text("imageUrl", "https://source.unsplash.com/ tNALoIZhqVM/200x100/"),
+  isSoldOut: true,
+}
 export const standard = () => (
   <ProductListItem
-  name={text("Name", "Standard Coffee")}
-  price={text("price", "2.50")}
-  onAddToCart={action("Add to cart clicked")}
-  imageUrl={text("imageUrl", "https://source.unsplash.com/tNALoIZhqVM/200x100/")}
-  isOnSale
+    data={standartData}
   />
 );
 
 export const soldOut = () => (
   <ProductListItem
-    name={text("Name", "Standard Coffee")}
-    price={text("price", "2.50")}
-    onAddToCart={action("Add to cart clicked")}
-    imageUrl={text("imageUrl", "https://source.unsplash.com/ tNALoIZhqVM/200x100/")}
-    isSoldOut
+    data={soldOutData}
   />
 );
+

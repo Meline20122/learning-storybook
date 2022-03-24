@@ -1,21 +1,32 @@
 import React from 'react';
 import './ProductListItem.css';
-import Card from '../atoms/Card';
-import Heading from '../atoms/Heading';
-import Text from '../atoms/Text';
-import Button from '../atoms/Button';
+import Card from '../../atoms/Card';
+import Heading from '../../atoms/Heading';
+import Text from '../../atoms/Text';
+import Button from '../../atoms/Button';
 
-function ProductListItem({name, price, imageUrl, onAddToCart, isSoldOut, isOnSale,}) {
+export default function ProductListItem({data}) {
+  console.log(data, 'mmm')
   return (
-  <Card highlight={isOnSale}>
+  <Card highlight={data.isOnSale}>
     <Heading>
-    {name} {isOnSale && "(On Sale)"}
+    {data.name} {data.isOnSale && "(On Sale)"}
     </Heading>
-    <img src={imageUrl} alt="" />
-    <Text>{price}</Text>
-    <Button onClick={onAddToCart} disabled={isSoldOut}>
-      {isSoldOut ? "Sold out" : "Add to Cart"}
+    <img src={data.imageUrl} alt="" />
+    <Text>{data.price}</Text>
+    <Button onClick={data.onAddToCart} disabled={data.isSoldOut}>
+      {data.isSoldOut ? "Sold out" : "Add to Cart"}
     </Button>
+    <div id="login-box">
+      <div>
+        Login box here...
+      </div>
+    </div>
+    <ul className="points">
+      <li>One</li>
+      <li>Two</li>
+      <li>Three</li>
+    </ul>
   </Card>
   );
 }

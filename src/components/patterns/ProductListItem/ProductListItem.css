@@ -14,3 +14,9 @@
 .card small::before {
     content: '$'
 }
+#login-box {
+    border: 1px solid #ededed; border-radius: 5px;
+}
+.points li:nth-child(3) {
+    background-color: #ccc;
+}
