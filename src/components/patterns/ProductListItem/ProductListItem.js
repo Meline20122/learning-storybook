@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import './ProductListItem.css';
 import Card from '../../atoms/Card';
 import Heading from '../../atoms/Heading';
@@ -6,7 +6,7 @@ import Text from '../../atoms/Text';
 import Button from '../../atoms/Button';
 
 export default function ProductListItem({data}) {
-  console.log(data, 'mmm')
+
   return (
   <Card highlight={data.isOnSale}>
     <Heading>
@@ -30,3 +30,4 @@ export default function ProductListItem({data}) {
   </Card>
   );
 }
+
