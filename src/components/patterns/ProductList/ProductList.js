@@ -9,7 +9,6 @@ export const statusTypes = {
 
 export default function ProductList({ status, data
                                     }) {
-  console.log(data)
   if (status === statusTypes.loading) {
     return <Loading />;
   }
